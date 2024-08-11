@@ -62,7 +62,6 @@ export const checkAuthorizationStatus = async (): Promise<{
 }> => {
   const url = new URL(endpoints.IS_AUTHORIZED, BACKEND_HOST);
   const response = await fetch(url, { credentials: "include" });
-
   if (!response.ok) {
     return { status: false };
   }
