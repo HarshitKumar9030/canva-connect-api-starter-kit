@@ -38,12 +38,13 @@ if (!port) {
 }
 
 const app = express();
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URL,
-    credentials: true,
-  }),
-);
+app.use(cors({
+  origin: [
+    "http://127.0.0.1:3003", 
+    "http://127.0.0.1:3000"
+  ],
+  credentials: true,
+}));
 app.use(bodyParser.json());
 // By supplying a secret to the cookie parser, we are enabling signed cookies
 // https://github.com/expressjs/cookie-parser?tab=readme-ov-file#cookieparsersecret-options
